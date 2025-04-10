@@ -518,3 +518,70 @@
 // };
 //   console.log(userName(users));
   
+// // this keyword inside a object's method
+// const obj= {
+//     a : 10,
+//     x : function(){
+//         console.log(this);
+//     }
+// }
+// obj.x();          //only calling function will give u referrence error;
+
+
+// call , apply , bind methods
+
+// CALL() - it help  us to borroww the function 
+// const name ={
+//     firstname : "Akshay",
+//     lastname : "Kumar",
+//     printFullName : function(){
+//         console.log(this.firstname + " " + this.lastname); 
+//     }
+// }
+// name.printFullName();
+
+// const name2 =  {
+//     firstname : "Raj",
+//     lastname   : "verma"
+// }
+// name.printFullName.call(name2);
+
+// APPLY() - same as call method but the difference is it make the 2nd argument as a array list.
+// const name ={
+//     firstname : "Akshay",
+//     lastname : "Kumar",
+// }
+// let printFullName = function(hometown,state){                                      //we created a seprate function, so we can easily access.
+//     console.log(this.firstname + " " + this.lastname + " from " + hometown + " , " + state);
+// }
+// printFullName.apply(name,["mumbai","MP"]);
+
+// const name2 =  {
+//     firstname : "Raj",
+//     lastname   : "verma"
+// }
+// printFullName.apply(name2,["delhi","Up"]);
+
+//BIND() - BIND METHOD DOESN'T DIRECTLY INVOKE THE FUNCTION BUT IT MAKES THE SAME COPY OF THAT FUNCTION SO U CAN INVOKE LATER.
+    // const name ={
+    //     firstname : "Akshay",
+    //     lastname : "Kumar",
+    // }
+    // let printFullName = function(hometown,state){                                   
+    //     console.log(this.firstname + " " + this.lastname + " from " + hometown + " , " + state);
+    // }
+    // printFullName.apply(name,["mumbai","MP"]);
+    
+    // const name2 =  {
+    //     firstname : "Raj",
+    //     lastname   : "verma"
+    // }
+    // let printMyName = printFullName.bind(name2,"delhi","Up");
+    // printMyName();
+
+    //  Function Hoisting 
+//     greet();
+//     function greet(){
+// console.log("good morning");
+//     }
+   
