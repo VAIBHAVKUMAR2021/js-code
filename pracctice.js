@@ -584,4 +584,34 @@
 //     function greet(){
 // console.log("good morning");
 //     }
-   
+
+ //  setTimeout() and setInterval()
+ 
+//  setTimeout(function(){                      // this is a anonymous function
+//     console.log("hi! im FuRY")
+//  },3000);                 // here, we set a timne delay so when it invoke it takes a delay 3000ms.
+
+ // now let's take an example of setInterval -- same as setTimeOut but the cache is it print the line of code while in interval of time
+ 
+//  const intervalID = setInterval( () => {                   // we create a variable so that we can easily use the clearinterval
+//     console.log("repeat")
+//  },2000);
+
+//  setTimeout(() => {
+//     clearInterval(intervalID);          //here it will stop the setInterval
+//     console.log("stopped");
+//  },6000);                                 
+
+// callback function....
+// Step 1: Define a function that prints "Hi"
+// function sayHi(name) {
+//     console.log("Hi", name);
+//   }
+  // Step 2: Define a function that accepts a callback
+//   function greet(callbackFunction) {
+//     console.log(callbackFunction);
+//     callbackFunction("randi"); // call the callback
+//   }
+  // Step 3: Call greet and pass sayHi as the callback
+//   greet(sayHi);
+  
