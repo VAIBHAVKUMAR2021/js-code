@@ -616,27 +616,98 @@
 //   greet(sayHi);
   
 //Higher order function
-const radius =[3,1,2,4];
+// const radius =[3,1,2,4];
 
-const area = function (radius){
-  return Math.PI * radius;
-};
+// const area = function (radius){
+//   return Math.PI * radius;
+// };
 
-const circumference = function (radius){
-  return 2 * Math.PI * radius;
-};
+// const circumference = function (radius){
+//   return 2 * Math.PI * radius;
+// };
 
-const diameter = function(radius){
-  return 2 * radius;
-};
+// const diameter = function(radius){
+//   return 2 * radius;
+// };
 
-const calculate = function(radius , logic){
-  const output = [];
-  for(let i = 0; i< radius.length; i++){
-    output.push(logic(radius[i]));
-  }
-  return output;
-}
-console.log(calculate(radius, area));
-console.log(calculate(radius, circumference));
-console.log(calculate(radius, diameter));
+// const calculate = function(radius , logic){
+//   const output = [];
+//   for(let i = 0; i< radius.length; i++){
+//     output.push(logic(radius[i]));
+//   }
+//   return output;
+// }
+// console.log(calculate(radius, area));
+// console.log(calculate(radius, circumference));
+// console.log(calculate(radius, diameter));
+
+// //Map
+// conversion in binary
+// const arr = [5,1,3,2,6];
+// const output = arr.map((x) => x.toString(2));
+// console.log(output);
+
+// triple the value
+// const arr = [5,1,3,2,6];
+// const output = arr.map(function triple(x){
+//  return x * 3; 
+// });
+// console.log(output);
+
+// //Filter
+// find out odd and even
+// const arr = [5,1,3,2,6];
+// const odd = arr.filter((x) => x%2 );
+// console.log(odd);
+
+// const arr = [5,1,3,2,6];
+// function isEven (x){
+//  return x % 2 === 0;
+// }
+// const even = arr.filter(isEven);
+// console.log(even);
+
+// //Reduce
+// sum and max
+// const arr = [5,1,3,2,6];
+// const sum = arr.reduce((acc,curr) => {
+//   acc = acc + curr;
+//   return acc;
+// },0);
+// console.log(sum);
+
+// const arr = [5,1,3,2,6];
+// const output = arr.reduce((max,curr) => {
+//   if(max < curr){
+//     max = curr;
+//   }
+//   return max;
+// },0);
+// console.log(output);
+
+// // Chaining Map,Filter& Reduce.
+// const users =[
+//   {firstname : "jai", lastname :"ki", age: 36},
+//   {firstname : "nani", lastname :"ji", age: 32},
+//   {firstname : "jain", lastname :"kim", age: 46},
+//   {firstname : "jaizy", lastname :"ai", age: 36},
+// ]
+// if we want to print the first and last name.
+// const output = users.map((x) => x.firstname + " " + x.lastname);
+// console.log(output);
+
+//find the same age users.
+// const output1 = users.reduce((acc,curr) =>{
+//   if(acc[curr.age]){
+//     acc[curr.age] = ++acc[curr.age];
+//   }
+//   else{
+//     acc[curr.age] = 1;
+//   }
+// return acc;
+// },{});
+// console.log(output1);
+
+// now we want users firstname whose age is below 40.
+// const output2 = users.filter((x) => x.age < 40).map((x)=> x.firstname);
+// console.log(output2);
