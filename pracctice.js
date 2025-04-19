@@ -711,3 +711,42 @@
 // now we want users firstname whose age is below 40.
 // const output2 = users.filter((x) => x.age < 40).map((x)=> x.firstname);
 // console.log(output2);
+
+//Asynchronous JS:
+//means some part of the code don't block the rest. JS schedules those partd to run later and moves on immediately.
+// Ques: how js handles async code?
+//js is single threaded but has : a call stack, web APIs (from browser), a callback queue, event loop.
+
+//Making http request (AJAX)
+// let request= new XMLHttpRequest();
+// request.open('GET','https://jsonplaceholder.typicode.com/posts/1');
+
+//use addEventListener:
+// request.addEventListener('readystatechange',function(){
+//   if(request.readyState === 4){
+//     if(request.status >=200 && request.status < 300){
+//       console.log('response:',request.responseText);
+//     }else{
+//       console.log('request failed with status:', request.status);
+//     }
+//   }
+// });
+
+//Handle Network Error:
+// request.addEventListener('error', function(){
+//   console.log('Network Error Occurred.');
+// });
+// request.send();
+
+//run on ive server then inspect and u will get the output otherwise it give error
+
+//Http response status:(Most common status code)
+// 200       ok                     success! got the data.
+// 201     created                  successfully created something[like new user].
+// 400     bad request              client made a Mistake[Invalid data sent]
+// 401     Unauthorized             you are not logged in.
+// 403     Forbidden                you dont have Permission.
+// 404     Not Found                resource not Found
+// 500     Internal server error    server made a mistake.
+
+
