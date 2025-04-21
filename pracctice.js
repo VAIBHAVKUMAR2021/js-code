@@ -749,4 +749,94 @@
 // 404     Not Found                resource not Found
 // 500     Internal server error    server made a mistake.
 
+// CALLBACK FUNCTION:
+// function greeting(name) {
+//   console.log('Hello, ' + name);
+// }
+// function processUserInput(callback) {
+//   let name = prompt('Please enter your name.');     //It's only work on browser 
+//   callback(name);
+// }
+// processUserInput(greeting);
 
+// //Real Life problem:
+// function haircut(callback) {
+//   setTimeout(() => {
+//     console.log("Haircut done!");
+//     callback();
+//   }, 2000);
+// }
+// function hairWash(callback) {
+//   setTimeout(() => {
+//     console.log("Hair wash done!");
+//     callback();
+//   }, 1000);
+// }
+// function styling() {
+//   console.log("Styling done!");
+// }
+// // Real flow using callbacks
+// haircut(() => {
+//   hairWash(() => {
+//     styling();
+//   });
+// });
+
+// function getUserData(callback) {
+//   setTimeout(() => {
+//     console.log("User data fetched");
+//     const user = { id: 1, name: "John" };
+//     callback(user);
+//   }, 2000);
+// }
+// function getUserPosts(user, callback) {
+//   setTimeout(() => {
+//     console.log(`Posts fetched for user: ${user.name}`);
+//     const posts = ["Post 1", "Post 2", "Post 3"];
+//     callback(posts);
+//   }, 1000);
+// }
+// function displayWelcomeMessage(posts) {
+//   console.log("Welcome! You have " + posts.length + " posts.");
+// }
+// // Calling the functions using callbacks
+// getUserData(function (user) {
+//   getUserPosts(user, function (posts) {
+//     displayWelcomeMessage(posts);
+//   });
+// });
+
+// //JSON parse() QUES: we want to print name and skills.
+// const usersData = '[{"name":"Sara","skills":["JS","React"]},{"name":"Mike","skills":["Python","Django"]}]';
+// const data = JSON.parse(usersData);                //  here we use the JSON.parse()
+// data.forEach((data) => {                           // we use the foreach which is best here because it's a best loop at this time.
+//   console.log(`${data.name} knows about ${data.skills.join(" and ")}`);
+// });
+
+//CALLBACK HELL
+// function loginUser(username, callback) {
+//   console.log(`User ${username} logged in`);
+//   callback(username);
+// }
+// function fetchCart(username, callback) {
+//   console.log(`Fetched cart for ${username}`);
+//   callback(['item1', 'item2', 'item3']);
+// }
+// function placeOrder(cartItems, callback) {
+//   console.log(`Order placed for ${cartItems}`);
+//   callback('order123');
+// }
+// function makePayment(orderId, callback) {
+//   console.log(`Payment done for Order ID: ${orderId}`);
+//   callback();
+// }
+// // 🔥 CALLBACK HELL STARTS HERE
+// loginUser('John', function(username) {              // 1ST function where we set the user name
+//   fetchCart(username, function(cartItems) {         // notice about the carts
+//     placeOrder(cartItems, function(orderId) {       // here we list up the items
+//       makePayment(orderId, function() {             // here we get the ORDER ID
+//         console.log('Order Complete ✅');           // here, the order is complete
+//       });
+//     });
+//   });
+// });
