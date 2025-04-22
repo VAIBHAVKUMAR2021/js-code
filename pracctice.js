@@ -840,3 +840,42 @@
 //     });
 //   });
 // });
+
+// let myPromise = new Promise(function (resolve, reject) {
+//   // Do some async task
+//   if (taskSuccess) {
+//     resolve(result);  // If success
+//   } else {
+//     reject(error);    // If failure
+//   }
+// });
+
+
+// myPromise
+//   .then(function(result) {
+//     // Handle success
+//     console.log(result);
+//   })
+//   .catch(function(error) {
+//     // Handle failure
+//     console.log(error);
+//   });
+
+//   let foodDelivery = new Promise(function(resolve, reject) {
+//     let foodReady = true;
+  
+//     if (foodReady) {
+//       resolve("Food Delivered! 🍔");
+//     } else {
+//       reject("Food Canceled! ❌");
+//     }
+//   });
+  
+//   foodDelivery
+//     .then(function(message) {
+//       console.log("Success:", message);
+//     })
+//     .catch(function(error) {
+//       console.log("Failed:", error);
+//     });
+  
