@@ -879,3 +879,20 @@
 //       console.log("Failed:", error);
 //     });
   
+// let foodDelivery = new Promise(function(resolve, reject) {
+//   let foodReady = true;
+
+//   if (foodReady) {
+//     resolve("Food Delivered! 🍔");
+//   } else {
+//     reject("Food Canceled! ❌");
+//   }
+// });
+
+// foodDelivery
+//   .then(function(message) {
+//     console.log("Success:", message);
+//   })
+//   .catch(function(error) {
+//     console.log("Failed:", error);
+//   });
