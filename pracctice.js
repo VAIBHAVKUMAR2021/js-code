@@ -879,20 +879,111 @@
 //       console.log("Failed:", error);
 //     });
   
-// let foodDelivery = new Promise(function(resolve, reject) {
-//   let foodReady = true;
-
-//   if (foodReady) {
-//     resolve("Food Delivered! 🍔");
+// let cabBooking = new Promise(function(resolve, reject) {
+//   let cabAvailable = false;
+//   if (cabAvailable) {
+//     resolve("Cab booked successfully! 🚖");
 //   } else {
-//     reject("Food Canceled! ❌");
+//     reject("No cab available right now. ❌");
 //   }
 // });
-
-// foodDelivery
+// cabBooking
 //   .then(function(message) {
 //     console.log("Success:", message);
 //   })
 //   .catch(function(error) {
-//     console.log("Failed:", error);
+//     console.log("Failure:", error);
+//   });
+
+//PROMISE CHAINING:
+// function stepOne() {
+// return new Promise(function(resolve, reject) {
+// resolve("Step 1 completed ✅");
+// });
+// }
+
+// function stepTwo() {
+// return new Promise(function(resolve, reject) {
+// resolve("Step 2 completed ✅");
+// });
+// }
+
+// function stepThree() {
+// return new Promise(function(resolve, reject) {
+// resolve("Step 3 completed ✅");
+// });
+// }
+
+// stepOne()
+// .then(function(result1) {
+// console.log(result1);
+// return stepTwo();  // returning next promise
+// })
+// .then(function(result2) {
+// console.log(result2);
+// return stepThree(); // returning next promise
+// })
+// .then(function(result3) {
+// console.log(result3);
+// console.log("All steps completed successfully 🎉");
+// })
+// .catch(function(error) {
+// console.log("Error occurred:", error);
+// });
+
+// // Create 3 promises: Order groceries → Cook food → Eat food. Chain them properly.
+// function orderGroceries() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       console.log("Groceries ordered!");
+//       resolve();
+//     }, 2000);
+//   });
+// }
+
+// function cookFood() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       console.log("Food cooked!");
+//       resolve();
+//     }, 1500);
+//   });
+// }
+
+// function eatFood() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       console.log("Food eaten!");
+//       resolve();
+//     }, 1000);
+//   });
+// }
+// // Chaining the promises
+// orderGroceries()
+//   .then(cookFood)       // what we did here we use the function as a argument in .then like a callback function
+//   .then(eatFood)
+//   .then(() => {
+//     console.log("Done with everything! 🥳");
+//   });
+
+// // fetch API (POST):
+// const userData = {
+//   name: "Aman",
+//   email: "aman@example.com",
+//   password: "secure123"
+// };
+
+// fetch("https://api.example.com/register", {
+//   method: "POST",
+//   headers: {
+//     "Content-Type": "application/json"
+//   },
+//   body: JSON.stringify(userData)
+// })
+//   .then(response => response.json())
+//   .then(data => {
+//     console.log("Registered Successfully:", data);
+//   })
+//   .catch(error => {
+//     console.log("Failed to Register:", error);
 //   });
