@@ -987,3 +987,19 @@
 //   .catch(error => {
 //     console.log("Failed to Register:", error);
 //   });
+
+// async function fetchUserData() {
+//   try {
+//     console.log("1. Fetching user...");
+//     const response = await fetch("https://jsonplaceholder.typicode.com/users/1");
+    
+//     console.log("2. Parsing data...");
+//     const user = await response.json();
+    
+//     console.log("3. Name:", user.name);
+//   } catch (err) {
+//     console.log("Error:", err);
+//   }
+// }
+
+// fetchUserData();
