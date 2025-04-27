@@ -988,18 +988,84 @@
 //     console.log("Failed to Register:", error);
 //   });
 
+//ASYNC FUNCTION:
 // async function fetchUserData() {
 //   try {
 //     console.log("1. Fetching user...");
 //     const response = await fetch("https://jsonplaceholder.typicode.com/users/1");
-    
 //     console.log("2. Parsing data...");
 //     const user = await response.json();
-    
 //     console.log("3. Name:", user.name);
 //   } catch (err) {
 //     console.log("Error:", err);
 //   }
 // }
-
 // fetchUserData();
+
+//Ques:
+// async function fury(){
+//   let delhiWeather = new Promise((resolve,reject) => {
+//     setTimeout(() => {
+//        resolve("27 Deg")
+//     },2000)
+//   })
+//   let bangloreWeather = new Promise((resolve,reject) => {
+//     setTimeout(() => {
+//        resolve("27 Deg")
+//     },5000)
+// })
+// console.log("Fetching Delhi Weather Please Wait...")
+// let delhiW = await delhiWeather
+// console.log("Fetched Delhi Weather:" + delhiW);
+// console.log("Fetching Banglore Weather Please Wait...")
+// let bangloreW = await bangloreWeather
+// console.log("Fetched Banglore Weather:" + bangloreW);
+// return [delhiW,bangloreW]
+// }
+// console.log("Welcome to Weather control room");
+// let a = fury()
+// a.then((value)=>{
+// console.log(value);
+// })
+
+// But what if the other function also run .....
+// async function fury(){
+//   let delhiWeather = new Promise((resolve,reject) => {
+//     setTimeout(() => {
+//        resolve("27 Deg")
+//     },2000)
+//   })
+//   let bangloreWeather = new Promise((resolve,reject) => {
+//     setTimeout(() => {
+//        resolve("27 Deg")
+//     },5000)
+// })
+// console.log("Fetching Delhi Weather Please Wait...")
+// let delhiW = await delhiWeather
+// console.log("Fetched Delhi Weather:" + delhiW);
+// console.log("Fetching Banglore Weather Please Wait...")
+// let bangloreW = await bangloreWeather
+// console.log("Fetched Banglore Weather:" + bangloreW);
+// return [delhiW,bangloreW]
+// }
+
+// const mustBe = () => {                 //as u can see this is an another function which runs parallel ..
+//   console.log("MustbeFuRY");
+// }
+// const main1 = async() => {                        //but here we use the async function so this goes in row 
+// console.log("Welcome to Weather control room");
+// let a = await fury();                             //with the help of await we can run the 1st function
+// let b = await mustBe();                           //after  that the 2nd function execute
+// }
+// main1();
+
+//THROWING COUSTOM ERROR:
+// try{
+//   console.log(fury)
+//   throw new RefferenceError("Fury is not available")        //give the error name outside the brackets and inside the brackets the message:
+// }
+// catch(err){
+//   console.log(err.name);                                    //name of error..
+//   console.log(err.message)                                  //error message...
+//   console.log(err.stack);                                   //stack as same when the real error appears 
+// }
